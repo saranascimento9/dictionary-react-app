@@ -16,6 +16,6 @@ export default function Results(props) {
       </div>
     );
   } else {
-    return "Nothing to show";
+    return "Search for something";
   }
 }
