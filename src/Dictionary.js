@@ -63,7 +63,7 @@ export default function Dictionary(props) {
           <div className="hint">Suggested words: sunset, forest, yoga</div>
         </section>
         <Results results={results} />
-        <Photos photos={photos} />
+        <Photos photos={photos} keyword={keyword} />
       </div>
     );
   } else {
