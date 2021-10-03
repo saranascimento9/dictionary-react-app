@@ -1,17 +1,91 @@
 body {
-  background-color: #e3f1f4;
+  background-color: #efedf1;
+  background: #fff url(./fundo.svg) no-repeat;
+  background-size: cover;
 }
 
 a {
   color: #53a6a7;
 }
+.App h1 {
+  color: #efedf1;
+}
 
 .App {
   margin: 40px auto;
-  max-width: 70%;
+  max-width: 80%;
 }
 
 .App-footer {
   margin: 30px 0;
   text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.gooey-rec {
+  background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+  height: 400px;
+  width: 400px;
+  border-radius: 30% 70% 20% 40%;
+  animation: transform 20s ease-in-out infinite both alternate,
+    movement_one 40s ease-in-out infinite both;
+  opacity: 0.5;
+  position: absolute;
+  left: 75%;
+  top: 40%;
+  z-index: -1;
+}
+.gooey-rec.one {
+  background: linear-gradient(90deg, #92fe9d 0%, #00c9ff 100%);
+  height: 900px;
+  width: 900px;
+  left: -500px;
+  top: -250px;
+  transform: rotate(-180deg);
+  animation: transform 30s ease-in-out infinite both alternate,
+    movement_two 60s ease-in-out infinite both;
+  z-index: -1;
+}
+
+@keyframes transform {
+  0%,
+  100% {
+    border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+  }
+  20% {
+    border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
+  }
+  40% {
+    border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+  }
+  60% {
+    border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+  }
+  80% {
+    border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+  }
+}
+
+@keyframes movement_one {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: translate(10%, 20%) rotateY(10deg) scale(1.3);
+  }
+}
+
+@keyframes movement_two {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: translate(50%, 20%) rotate(-200deg) scale(1.2);
+  }
 }

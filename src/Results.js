@@ -7,27 +7,45 @@ export default function Results(props) {
   if (props.results) {
     return (
       <div className="Results">
-        <section>
-          <h2>{props.results.word}</h2>
-          {props.results.phonetics.map(function (phonetic, index) {
-            return (
-              <div key={index}>
-                <Phonetic phonetic={phonetic} />
+        <div className="container">
+          <div className="row d-flex justify-content-center ">
+            <section className="col-4">
+              <div className="row d-flex align-items-baseline">
+                <div className="col">
+                  <h2>{props.results.word}</h2>
+                </div>
+                <div className="col">
+                  {props.results.phonetics.map(function (phonetic, index) {
+                    return (
+                      <div key={index}>
+                        <Phonetic phonetic={phonetic} />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            );
-          })}
-        </section>
-
-        {props.results.meanings.map(function (meaning, index) {
-          return (
-            <section key={index}>
-              <Meaning meaning={meaning} />
             </section>
-          );
-        })}
+          </div>
+
+          <div className="row">
+            {props.results.meanings.map(function (meaning, index) {
+              return (
+                <section className="col" key={index}>
+                  <Meaning meaning={meaning} />
+                </section>
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   } else {
-    return "";
+    return (
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border text-light" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    );
   }
 }

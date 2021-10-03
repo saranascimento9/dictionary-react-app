@@ -30,6 +30,8 @@ export default function App() {
           </a>
         </footer>
       </div>
+      <div class="gooey-rec one"></div>
+      <div class="gooey-rec"></div>
     </div>
   );
 }
