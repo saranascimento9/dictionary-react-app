@@ -40,12 +40,6 @@ export default function Results(props) {
       </div>
     );
   } else {
-    return (
-      <div class="d-flex justify-content-center">
-        <div class="spinner-border text-light" role="status">
-          <span class="sr-only"></span>
-        </div>
-      </div>
-    );
+    return "";
   }
 }
